@@ -1,23 +1,4 @@
-def bin2dec(bin):
-
-    bin2 = bin[::-1]
-
-    bina = []
-
-    suma = 0
-
-    for bi in bin2:
-
-        bina.append(bi)
-
-    for i in range(0,len(bin2)):
-
-        if bina[i] != "0":
-
-            suma += (2**i)
-
-    return suma
-
+#decimal a binario
 def dec2bin(dec):
 
     rdo = ""
@@ -45,6 +26,28 @@ def dec2bin(dec):
     rdo2 = rdo[::-1]
 
     return rdo2      
-    
+
+#binario a decimal
+def bin2dec(bin):
+
+    bin2 = bin[::-1]
+
+    bina = []
+
+    suma = 0
+
+    for bi in bin2:
+
+        bina.append(bi)
+
+    for i in range(0,len(bin2)):
+
+        if bina[i] != "0":
+
+            suma += (2**i)
+
+    return suma
+
+
 
 
