@@ -1,3 +1,50 @@
+#decimal a binario
+def dec2bin(dec):
+
+    rdo = ""
+
+    while dec >= 2:
+        
+        resto = dec % 2
+        dec = dec // 2
+
+        div2 = str(resto)
+
+        rdo += div2
+
+    if dec == 1:
+        rdo += "1"
+    else:
+        rdo += "0"   
+
+    if len(rdo)<8:
+
+        cant = 8-len(rdo)
+        
+        rdo += "0"*cant
+
+    rdo2 = rdo[::-1]
+
+    return rdo2      
+
+#decimal a octal
+def dec2oct(dec):
+
+    rdo = ""
+
+    while dec >= 8:
+        
+        resto = dec % 8
+        dec = dec // 8
+
+        rdo += str(resto)
+    
+    rdo= rdo + str(dec)
+
+    rdo = int(rdo[::-1])
+
+    return rdo
+
 #decimal a hexadecimal
 def dec2hex(dec):
 
@@ -46,36 +93,3 @@ def dec2hex(dec):
         rdo = rdo[::-1]
 
     return rdo
-
-#hexadecimal a decimal
-def hex2dec(hex):
-
-    hex = hex[::-1]
-
-    hexadec = []
-
-    suma = 0
-
-    for h in hex:
-
-        hexadec.append(h)
-
-    for i in range(0,len(hexadec)):
-
-        if hexadec[i] == "A":
-            suma += 10*(16**i)
-        elif hexadec[i] == "B":
-            suma += 11*(16**i)
-        elif hexadec[i] == "C":
-            suma += 12*(16**i)
-        elif hexadec[i] == "D":
-            suma += 13*(16**i)
-        elif hexadec[i] == "E":
-            suma += 14*(16**i)
-        elif hexadec[i] == "F":
-            suma += 15*(16**i)
-        else:
-            hexadec[i] = int(hexadec[i])
-            suma += (hexadec[i])*(16**i)
-
-    return suma
